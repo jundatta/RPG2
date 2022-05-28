@@ -17,6 +17,9 @@ PShape createCan(float r, float h, int detail) {
   sh.endShape();
   return sh;
 }
+PShape createCan(float r, float h) {
+  return createCan(r, h, 24);
+}
 // ふたつき缶（PC-8001さんありがとう）
 PShape createCan(float radius, float height, int detail, boolean bottomCap, boolean topCap) {
   textureMode(NORMAL);
@@ -95,7 +98,9 @@ PShape createCone(float r, float h, int detail) {
   sh.endShape();
   return sh;
 }
-
+PShape createCone(float r, float h) {
+  return createCone(r, h, 24);
+}
 PShape createTorus(float outerRad, float innerRad, int numc, int numt) {
   PShape sh = createShape();
   sh.beginShape(TRIANGLE_STRIP);
@@ -135,6 +140,9 @@ PShape createTorus(float outerRad, float innerRad, int numc, int numt) {
   }
   sh.endShape();
   return sh;
+}
+PShape createTorus(float outerRad, float innerRad) {
+  return createTorus(outerRad, innerRad, 24, 16);
 }
 PShape createTorus(float outerRad, float innerRad, int numc, int numt,
   color strokeColor) {
