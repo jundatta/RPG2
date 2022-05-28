@@ -40,12 +40,12 @@ void setup() {
   gCongratulations = new Congratulations(this);
   gCongratulations.setup();
 
-  //gGameStack = setupEventHook(this);
+  gGameStack = setupEventHook(this);
   // ビューア機能搭載＼(^_^)／（by PC-8001(TN8001)さん）
-  gGameStack = new Viewer8001GameStack(this);
+  //gGameStack = new Viewer8001GameStack(this);
 
   gGameStack.change(new GameSceneTitle());
-  gGameStack.change(new GameSceneCongratulations268());
+  //gGameStack.change(new GameSceneCongratulations269());
 }
 
 void setupMinim(PApplet applet) {
