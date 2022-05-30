@@ -45,7 +45,7 @@ void setup() {
   //gGameStack = new Viewer8001GameStack(this);
 
   gGameStack.change(new GameSceneTitle());
-  //gGameStack.change(new GameSceneCongratulations271());
+  //gGameStack.change(new GameSceneCongratulations272());
 }
 
 void setupMinim(PApplet applet) {
