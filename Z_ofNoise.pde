@@ -1,4 +1,4 @@
-static class openFrameworks {
+static class openFrameworks { //<>//
   static final int[][] simplex = {
     {0, 1, 2, 3}, {0, 1, 3, 2}, {0, 0, 0, 0}, {0, 2, 3, 1}, {0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}, {1, 2, 3, 0},
     {0, 2, 1, 3}, {0, 0, 0, 0}, {0, 3, 1, 2}, {0, 3, 2, 1}, {0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}, {1, 3, 2, 0},
@@ -38,13 +38,17 @@ static class openFrameworks {
   };
 
   static int OFNOISE_FASTFLOOR(float x) {
-    //  return (x>0.0f) ? (int)x : (int)x-1;
+    return (x>0.0f) ? (int)x : (int)x-1;
     // 結果がマイナスの場合は0を返すように変える
-    int r = (x>0.0f) ? (int)x : (int)x-1;
-    if (r < 0) {
-      return 0;
-    }
-    return r;
+    // 【2022/06/01】
+    // ごめん。ここ変えたらperm[]のインデックス（ii,jj,kk）はガードできるけど
+    // i,j,kを使った計算はマイナス値も通さないとふぎゃあってなるわ～
+    // なので、戻します
+    //int r = (x>0.0f) ? (int)x : (int)x-1;
+    //if (r < 0) {
+    //  return 0;
+    //}
+    //return r;
   }
 
   static float  grad3( int hash, float x, float y, float z ) {
@@ -159,9 +163,15 @@ static class openFrameworks {
     z3 = z0 - 1.0f + 3.0f*G3;
 
     /* Wrap the integer indices at 256, to avoid indexing perm[] out of bounds */
-    ii = i % 256;
-    jj = j % 256;
-    kk = k % 256;
+    //ii = i % 256;
+    //jj = j % 256;
+    //kk = k % 256;
+    // 【2022/06/01】
+    // perm[]へのインデックスがマイナスにならないように細工する
+    ii = abs(i) % 256;
+    jj = abs(j) % 256;
+    kk = abs(k) % 256;
+
 
     /* Calculate the contribution from the four corners */
     t0 = 0.6f - x0*x0 - y0*y0 - z0*z0;
