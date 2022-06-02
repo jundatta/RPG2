@@ -313,10 +313,12 @@ static class openFrameworks { //<>//
     w4 = w0 - 1.0f + 4.0f*G4;
 
     /* Wrap the integer indices at 256, to avoid indexing perm[] out of bounds */
-    ii = i % 256;
-    jj = j % 256;
-    kk = k % 256;
-    ll = l % 256;
+    // 【2022/06/03】水平展開
+    // perm[]へのインデックスがマイナスにならないように細工する
+    ii = abs(i) % 256;
+    jj = abs(j) % 256;
+    kk = abs(k) % 256;
+    ll = abs(l) % 256;
 
     /* Calculate the contribution from the five corners */
     t0 = 0.6f - x0*x0 - y0*y0 - z0*z0 - w0*w0;
@@ -416,8 +418,10 @@ static class openFrameworks { //<>//
     y2 = y0 - 1.0f + 2.0f * G2;
 
     /* Wrap the integer indices at 256, to avoid indexing perm[] out of bounds */
-    ii = i % 256;
-    jj = j % 256;
+    // 【2022/06/03】水平展開
+    // perm[]へのインデックスがマイナスにならないように細工する
+    ii = abs(i) % 256;
+    jj = abs(j) % 256;
 
     /* Calculate the contribution from the three corners */
     t0 = 0.5f - x0*x0-y0*y0;
@@ -467,14 +471,20 @@ static class openFrameworks { //<>//
     float t1 = 1.0f - x1*x1;
     float n0, n1;
 
+    // 【2022/06/03】水平展開
+    // perm[]へのインデックスがマイナスにならないように細工する
+    // ⇒たぶんこのまま（i0(i1) % 0xff）でも悪さはしないがほかの箇所での
+    //   細工とちょっと雰囲気が変わってしまうのでロジックを合わせる
     float t0 = 1.0f - x0*x0;
     /*  if(t0 < 0.0f) t0 = 0.0f; // this never happens for the 1D case */
     t0 *= t0;
-    n0 = t0 * t0 * grad1(perm[i0 & 0xff], x0);
+    //    n0 = t0 * t0 * grad1(perm[i0 & 0xff], x0);
+    n0 = t0 * t0 * grad1(perm[abs(i0) % 256], x0);
 
     /*  if(t1 < 0.0f) t1 = 0.0f; // this never happens for the 1D case */
     t1 *= t1;
-    n1 = t1 * t1 * grad1(perm[i1 & 0xff], x1);
+//    n1 = t1 * t1 * grad1(perm[i1 & 0xff], x1);
+    n1 = t1 * t1 * grad1(perm[abs(i1) % 256], x1);
     /* The maximum value of this noise is 8*(3/4)^4 = 2.53125 */
     /* A factor of 0.395 would scale to fit exactly within [-1,1], but */
     /* we want to match PRMan's 1D noise, so we scale it down some more. */
