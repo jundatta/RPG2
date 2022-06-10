@@ -1,4 +1,4 @@
-# 【遊び方】2022/04/29
+# 【遊び方】2022/06/11
 
 https://www.nicovideo.jp/watch/sm40163068
 https://www.youtube.com/watch?v=RBkOlsDzWCo
@@ -6,12 +6,12 @@ https://www.youtube.com/watch?v=RBkOlsDzWCo
 ##### １．最近の「Processingで遊ぶにゃ♪」の配信を開きます。
 
   "Processing"とかで検索するとでます。
-　・配信でいじってるブロック崩しのダウンロード先です。
-に書いてあるURLを開いて「block_kuzushi.zip」をダウンロードしてください。
+　・配信でいじってるブロック崩し２（仮）のダウンロード先です。
+に書いてあるURLを開いて「block_kuzushi2.zip」をダウンロードしてください。
 
 ##### ２．適当なところに展開してください。
 
-##### ３．block_kuzushi\ProcessingCustom\【カスタマイしたProcessing4のIDE】にゃー\build\windows\work\processing.exe
+##### ３．block_kuzushi2\ProcessingCustom\【カスタマイしたProcessing4のIDE】にゃー\build\windows\work\processing.exe
 をダブルクリックして起動してください。
 
 ##### ４．音をならすために「minim」というライブラリをインストールします。
@@ -24,11 +24,11 @@ https://www.youtube.com/watch?v=RBkOlsDzWCo
 （４）画面右下の「Install」ボタンを押してください。
 （５）メイン画面に戻ってメニューの「Sketch/Import Library...」で表示されるメニューの一番下に「Minim」が表示されていればOKです。
 
-##### ５．block_kuzushi\block_kuzushi.pdeをダブルクリックしてください。
+##### ５．block_kuzushi2\block_kuzushi.pdeをダブルクリックしてください。
 
 ##### ６．表示された画面左上にある「右向き矢印アイコン」をクリックしてください。
 
-##### ７．「ブロック崩し」が動き出せば（20数秒かかりますm(__)m）OKです。
+##### ７．「ブロック崩し２（仮）」が動き出せば（20数秒かかりますm(__)m）OKです。
 
 。。。お疲れさまでした♪
 
