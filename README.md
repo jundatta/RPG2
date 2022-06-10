@@ -1,3 +1,5 @@
+# はげはげ
+
 【遊び方】2022/04/29
 
 https://www.nicovideo.jp/watch/sm40163068
