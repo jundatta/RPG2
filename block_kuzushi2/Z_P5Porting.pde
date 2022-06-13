@@ -3,6 +3,9 @@
 <T> T P5JSrandom(T... args) {
   return args[int(random(args.length))];
 }
+<T> T P5JSrandom(ArrayList<T> args) {
+  return args.get(int(random(args.size())));
+}
 color P5JSrandom(color[] args) {
   return args[int(random(args.length))];
 }
