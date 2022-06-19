@@ -3,13 +3,14 @@ class GameSceneTitle extends GameScene {
 
   @Override void setup() {
     gbAutoDemo = false;
-    surface.setTitle("block_kuzushi２（仮）");
+    //surface.setTitle("block_kuzushi２（仮）");
+    surface.setTitle("六本木うどん屋（仮）");
   }
 
   @Override void draw() {
     colorMode(HSB, 360, 100, 100);
     imageMode(CENTER);
-    
+
     background(0);
     image(gEarth, 0, 0, gEarth.width, gEarth.height);
 
@@ -25,7 +26,7 @@ class GameSceneTitle extends GameScene {
     textSize(50);
     int titleX = 10;
     int titleY = (height / 5) * 3;
-    text("ブロック崩し２（仮）", titleX, titleY);
+    text("六本木うどん屋（仮）", titleX, titleY);
     textSize(16);
     fill(120, 100, 100);
     titleX += 200;
