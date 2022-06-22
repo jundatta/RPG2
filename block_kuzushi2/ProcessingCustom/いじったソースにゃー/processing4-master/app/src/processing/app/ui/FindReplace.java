@@ -269,7 +269,7 @@ public class FindReplace extends JFrame {
   }
 
 
-	private boolean isAlphabetDigit(char c) {
+	private boolean isAlphabetDigitUnderbar(char c) {
 		if (Character.isLowerCase(c)) {
 			return true;
 		}
@@ -277,6 +277,9 @@ public class FindReplace extends JFrame {
 			return true;
 		}
 		if (Character.isDigit(c)) {
+			return true;
+		}
+		if ('_' == c) {
 			return true;
 		}
 		return false;
@@ -295,19 +298,21 @@ public class FindReplace extends JFrame {
 			// 次の検索位置を求めておく
 			start = nextIndex + searchTerm.length();
 			
-			// 見つけた単語の前の文字がアルファベットまたは数字の場合は
+			// 見つけた単語の前の文字が
+			// アルファベットまたは数字またはアンダーバーの場合は
 			// 単語単位ではないと見なして次を探す
 			int begin = nextIndex - 1;
 			if (0 <= begin) {
-				if (isAlphabetDigit(text.charAt(begin))) {
+				if (isAlphabetDigitUnderbar(text.charAt(begin))) {
 					continue;
 				}
 			}
-			// 見つけた単語の後ろの文字がアルファベットまたは数字の場合は
+			// 見つけた単語の後ろの文字が
+			// アルファベットまたは数字またはアンダーバーの場合は
 			// 単語単位ではないと見なして次を探す
 			int end = nextIndex + searchTerm.length();
 			if (end < text.length()) {
-				if (isAlphabetDigit(text.charAt(end))) {
+				if (isAlphabetDigitUnderbar(text.charAt(end))) {
 					continue;
 				}
 			}
@@ -330,19 +335,21 @@ public class FindReplace extends JFrame {
 			// 次の検索位置を求めておく
 			start = nextIndex - searchTerm.length();
 			
-			// 見つけた単語の前の文字がアルファベットまたは数字の場合は
+			// 見つけた単語の前の文字が
+			// アルファベットまたは数字またはアンダーバーの場合は
 			// 単語単位ではないと見なして次を探す
 			int begin = nextIndex - 1;
 			if (0 <= begin) {
-				if (isAlphabetDigit(text.charAt(begin))) {
+				if (isAlphabetDigitUnderbar(text.charAt(begin))) {
 					continue;
 				}
 			}
-			// 見つけた単語の後ろの文字がアルファベットまたは数字の場合は
+			// 見つけた単語の後ろの文字が
+			// アルファベットまたは数字またはアンダーバーの場合は
 			// 単語単位ではないと見なして次を探す
 			int end = nextIndex + searchTerm.length();
 			if (end < text.length()) {
-				if (isAlphabetDigit(text.charAt(end))) {
+				if (isAlphabetDigitUnderbar(text.charAt(end))) {
 					continue;
 				}
 			}
