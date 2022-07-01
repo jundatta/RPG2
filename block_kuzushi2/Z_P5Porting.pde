@@ -78,4 +78,8 @@ static class P5JS {
     tmp.endDraw();
     out.image(tmp, dx, dy, dWidth, dHeight);
   }
+
+  static float fract(float value) {
+    return value - (int)value;
+  }
 }
