@@ -109,7 +109,7 @@ class GameSceneCongratulations263 extends GameSceneCongratulationsBase {
       this.vel = this.dir.copy().mult(6);
       this.radius = 15;
       this.alpha = 0;
-      this.col = P5JSrandom(colors);
+      this.col = P5JS.random(colors);
     }
 
     void update() {

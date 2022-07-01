@@ -108,7 +108,7 @@ Algorithm inspired by the one described by Matt DesLauriers in this talk: https:
     for (var i = 0; i < 2; i++) {
       PVector c;
       do {
-        c = P5JSrandom(points);
+        c = P5JS.random(points);
       } while (centroids.indexOf(c) != -1);
       centroids.add(c);
       clusters.add(new ArrayList());
@@ -162,11 +162,11 @@ Algorithm inspired by the one described by Matt DesLauriers in this talk: https:
     } while (!bEquals);
     return hull;
   }
-  
+
   float distSquared(PVector p, PVector q) {
     return sq(p.x - q.x) + sq(p.y - q.y);
   }
-  
+
   @Override void mousePressed() {
     gGameStack.change(new GameSceneTitle());
   }

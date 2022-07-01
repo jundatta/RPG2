@@ -1,22 +1,21 @@
-// PC-8001(TN8001)様に頂きました！！
-//。。。random([-2,2,-5,5,-10,10] ⇒ P5Random(-2,2,-5,5,-10,10)
-<T> T P5JSrandom(T... args) {
-  return args[int(random(args.length))];
-}
-<T> T P5JSrandom(ArrayList<T> args) {
-  return args.get(int(random(args.size())));
-}
-color P5JSrandom(color[] args) {
-  return args[int(random(args.length))];
-}
-float P5JSrandom(float[] args) {
-  return args[int(random(args.length))];
-}
-
 static class P5JS {
   static PApplet mPApplet;
   static void setup(PApplet pa) {
     mPApplet = pa;
+  }
+
+  // TN8001(PC-8001)さんに頂きました！！
+  static <T> T random(T... args) {
+    return args[int(mPApplet.random(args.length))];
+  }
+  static <T> T random(ArrayList<T> args) {
+    return args.get(int(mPApplet.random(args.size())));
+  }
+  static color random(color[] args) {
+    return args[int(mPApplet.random(args.length))];
+  }
+  static float random(float[] args) {
+    return args[int(mPApplet.random(args.length))];
   }
 
   static void swap(color[] arr, int i, int j) {

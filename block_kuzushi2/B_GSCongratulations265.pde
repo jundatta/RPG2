@@ -37,12 +37,12 @@ class GameSceneCongratulations265 extends GameSceneCongratulationsBase {
       set_uniform(theShader[i]);
     }
 
-    t0 = random(12, 16) * P5JSrandom(-1, 1);
-    t1 = random(2, 5) * P5JSrandom(-1, 1);
-    t2 = random(2, 5) * P5JSrandom(-1, 1);
-    t3 = random(15, 22) * P5JSrandom(-1, 1);
+    t0 = random(12, 16) * P5JS.random(-1, 1);
+    t1 = random(2, 5) * P5JS.random(-1, 1);
+    t2 = random(2, 5) * P5JS.random(-1, 1);
+    t3 = random(15, 22) * P5JS.random(-1, 1);
 
-    tc = random(15, 22) * P5JSrandom(-1, 1);
+    tc = random(15, 22) * P5JS.random(-1, 1);
 
     ns = int(random(6, 9));
   }
