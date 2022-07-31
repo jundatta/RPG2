@@ -13,6 +13,9 @@ class GameSceneCongratulations289 extends GameSceneCongratulationsBase {
     noStroke();
     s = loadShader("data/289/neort.glsl");
     s.set("resolution", width, height);
+    float aspect = (float)width / (float)height;
+    s.set("uniformAspect", aspect);
+    s.set("uniformInverseAspect", 1.0f / aspect);
   }
   @Override void draw() {
     s.set("time", millis() / 1000.0f);

@@ -2,6 +2,9 @@ precision highp float;
 uniform float time;
 uniform vec2 resolution;
 
+uniform float uniformAspect;	// resolution.x / resolution.y
+uniform float uniformInverseAspect;	// 1.0 / (resolution.x / resolution.y)
+
 // params
 // MODE : 0,1,2
 #define MODE 1
@@ -69,7 +72,7 @@ void main()
     float t = time*(1./SLIDE_SPAN);
     uv.x += floor(t) + easeInOut(fract(t));
     vec2 fuv = fract(uv)*2.0-1.0;	// -1.0 < fuv < 1.0 であってる？
-    fuv *= 1.0 / (resolution.x / resolution.y);	// 逆数？
+    fuv *= uniformInverseAspect;	// 逆数（もとに戻す）？
     vec2 iuv = floor(uv);	// 色が変わる！！（とりあえず円の大きさには無関係(^_^)）
     
     // render
@@ -85,7 +88,7 @@ void main()
     }
     
     // frame
-    uv = abs(fuv*vec2(resolution.x/resolution.y, 1.));
+    uv = abs(fuv*vec2(uniformAspect, 1.));
     float r=0.9, w=0.01;
     vec3 frameCol = vec3(0.98);	// 淡い白？
     col = mix(frameCol, col, smoothstep(r, r-w, length(uv)));
