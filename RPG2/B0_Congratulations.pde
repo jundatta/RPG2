@@ -15,7 +15,7 @@ class Congratulations {
   void setup() {
     mStub.clear();
 
-    Class[] classes = mApp.getClass().getDeclaredClasses(); // block_kuzushi内のすべてのクラスを列挙
+    Class[] classes = mApp.getClass().getDeclaredClasses(); // RPG2内のすべてのクラスを列挙
     for (Class clazz : classes) {
       if (!GameSceneCongratulationsBase.class.isAssignableFrom(clazz)) continue; // GameSceneCongratulationsBaseかその派生でなければcontinue
       String name = clazz.getSimpleName(); // クラス名
@@ -49,7 +49,7 @@ class Congratulations {
     String s = clazz.getSimpleName();
     println(s);
     String number = s.replaceAll("[^0-9]", "");
-    surface.setTitle("block_kuzushi [" + number + "]");
+    surface.setTitle("RPG2 [" + number + "]");
   }
 }
 

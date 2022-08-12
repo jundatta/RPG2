@@ -3,7 +3,7 @@ class GameSceneOshimai extends GameScene {
 
   @Override void setup() {
     gbAutoDemo = false;
-    surface.setTitle("block_kuzushi");
+    surface.setTitle("RPG2");
   }
 
   @Override void draw() {

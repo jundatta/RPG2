@@ -20,6 +20,7 @@
 // 【移植】TN8001さん
 // https://gist.github.com/TN8001/c3936d5c8c1c62ec399b841f98ab16ac
 
+import java.util.function.BooleanSupplier;
 import java.util.Map;
 import java.util.Objects;
 import ptmx.*;
@@ -70,22 +71,17 @@ class GameSceneScene extends GameScene {
     player = new Player("16.png", p.getX(), p.getY());
 
     whiteSword = map.getObject("ホワイトソード");
-    whiteSword.setInteraction(() -> player.weapon = new Weapon("16.png", 64, 32), true);
+    whiteSword.setInteraction(() -> player.weapon = new Weapon("16.png", 64, 32));
 
     blackSword = map.getObject("ブラックソード");
-    blackSword.setInteraction(() -> player.weapon = new Weapon("16.png", 64, 48), true);
+    blackSword.setInteraction(() -> player.weapon = new Weapon("16.png", 64, 48));
 
     breakableWall = map.getObject("壊せる壁");
-    breakableWall.setInteraction(() -> {
-      if (!whiteSword.getVisible()) breakableWall.setVisible(false);
-    }
-    , false);
+    breakableWall.setInteraction(breakableWall::doNothing, whiteSword::getInvisible);
 
     monster = map.getObject("モンスター");
-    monster.setInteraction(() -> {
-      if (!blackSword.getVisible()) goal.setVisible(true);
-    }
-    , true);
+    monster.setInteraction(() -> goal.setVisible(true), blackSword::getInvisible);
+
 
     npc = map.getObject("NPC");
     npc.setInteraction(() -> message.set("こんにちは、少尉。"), false);
@@ -117,6 +113,12 @@ class GameSceneScene extends GameScene {
     }
   }
   @Override void keyPressed() {
+    // ESCキーが入力されたら中断する
+    if (key == ESC) {
+      key = 0;  // プログラムが終了しないように書き換えた
+      gGameStack.push(new GameScenePause());
+      return;
+    }
     if (keyMap.containsKey(keyCode)) keyMap.put(keyCode, true);
   }
   @Override void keyReleased() {
@@ -389,6 +391,9 @@ class GameSceneScene extends GameScene {
       if (v) dict.remove("visible");
       else dict.set("visible", "0");
     }
+    boolean getInvisible() {
+      return !getVisible();
+    }
 
     public int getX() {
       return int(int(dict.get("x")) / tileSize.x);
@@ -407,13 +412,30 @@ class GameSceneScene extends GameScene {
     public Runnable getInteraction() {
       return interaction;
     }
-    public void setInteraction(Runnable interaction, boolean remove) {
+    public void setInteraction(Runnable execute) {
+      setInteraction(execute, () -> true, true);
+    }
+    public void setInteraction(Runnable execute, boolean remove) {
+      setInteraction(execute, () -> true, remove);
+    }
+    public void setInteraction(Runnable execute, BooleanSupplier canExecute) {
+      setInteraction(execute, canExecute, true);
+    }
+    public void setInteraction(Runnable execute, BooleanSupplier canExecute, boolean remove) {
       if (remove) {
-        this.interaction = () -> {
-          interaction.run();
-          setVisible(false);
+        interaction = () -> {
+          if (canExecute.getAsBoolean()) {
+            execute.run();
+            setVisible(false);
+          }
         };
-      } else this.interaction = interaction;
+      } else {
+        interaction = () -> {
+          if (canExecute.getAsBoolean()) execute.run();
+        };
+      }
+    }
+    void doNothing() {
     }
   }
 

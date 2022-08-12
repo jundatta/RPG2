@@ -17,7 +17,7 @@ class GameSceneTitle extends GameScene {
     if (mFrame + 60 * 3 < frameCount) {
       // デモ状態に遷移する
       gbAutoDemo = true;
-      gGameStack.change(new GameSceneDemo());
+      gCongratulations.jump();
       return;
     }
 
@@ -43,7 +43,7 @@ class GameSceneTitle extends GameScene {
     text("press any key to start", 10, (height / 5) * 4);
   }
   @Override void mousePressed() {
-    gGameStack.change(new GameScenePlay());
+    gGameStack.change(new GameSceneScene());
   }
   @Override void keyPressed() {
     // ESCキーが入力されたら終了する
@@ -52,6 +52,6 @@ class GameSceneTitle extends GameScene {
     }
     super.keyPressed();
 
-    gGameStack.change(new GameScenePlay());
+    gGameStack.change(new GameSceneScene());
   }
 }

@@ -230,7 +230,7 @@ class Viewer8001GameStack extends GameStack {
     }
 
     var number = clazz.getSimpleName().replaceAll("[^0-9]", "");
-    mApplet.getSurface().setTitle("block_kuzushi [" + number + "]");
+    mApplet.getSurface().setTitle("RPG2 [" + number + "]");
   }
 
   @Override GameScene peek() {
