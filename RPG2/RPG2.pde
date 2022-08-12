@@ -1,5 +1,6 @@
 GameStack gGameStack;
 MinimAssistance gMinimAssistance;
+PApplet gApplet;
 
 PImage gEarth;
 PImage gMoon;
@@ -15,6 +16,8 @@ boolean gbAutoDemo = false;
 Congratulations gCongratulations;
 
 void setup() {
+  gApplet = this;
+
   P5JS.setup(this);
 
   size(500, 800, P3D);
