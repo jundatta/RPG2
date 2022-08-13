@@ -1,4 +1,4 @@
-【Processing 4（beta8）IDEのビルド手順】2022/05/02
+【Processing 4.x.x IDEのビルド手順】2022/08/13
 
 　https://www.nicovideo.jp/watch/sm40160668
 　https://youtu.be/QEW2xD99Z-M
@@ -8,9 +8,7 @@
 （１）https://github.com/processing/processing4/releases/
 　　　から「Source code (zip)」をダウンロードして展開する。
 
-　⇒processing4-processing-1283-4.0b8.zip
-
-    （例）C:\に展開してできたC:\processing4-processing-1283-4.0b8フォルダを
+    （例）C:\に展開してできたC:\processing4-processing-1286-4.0.1フォルダを
 　　　　　C:\processing4-masterにフォルダ名を変える。
 
 2. Java SE 17をとってきてインストールする。
@@ -42,7 +40,7 @@
         ant clean
 
 ※インストールビルド前とインストールビルド後のディスク容量の差
-　⇒約1.7[GB]（1,671,966,720）
+　⇒約1.7[GB]
 
 ======
 
