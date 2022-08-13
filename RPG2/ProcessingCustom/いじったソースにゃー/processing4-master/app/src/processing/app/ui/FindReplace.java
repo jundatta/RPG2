@@ -35,6 +35,7 @@ import processing.app.Language;
 import processing.app.Platform;
 import processing.app.Sketch;
 
+import processing.app.Preferences;
 
 /**
  * Find & Replace window for the Processing editor.
@@ -56,10 +57,10 @@ public class FindReplace extends JFrame {
   JButton findButton;
 
   JCheckBox ignoreCaseBox;
-  static boolean ignoreCase = false;
+  static boolean ignoreCase = true;
 
   JCheckBox allTabsBox;
-  static boolean allTabs = true;
+  static boolean allTabs = false;
 
   JCheckBox wrapAroundBox;
   static boolean wrapAround = true;
@@ -85,7 +86,8 @@ public class FindReplace extends JFrame {
           ignoreCase = ignoreCaseBox.isSelected();
         }
       });
-    ignoreCaseBox.setSelected(ignoreCase);
+	// TN8001さんありがとう＼(^_^)／
+	ignoreCaseBox.setSelected(!"false".equals(Preferences.get("findreplace.ignorecase")));
 
     allTabsBox = new JCheckBox(Language.text("find.all_tabs"));
     allTabsBox.addActionListener(new ActionListener() {
@@ -93,7 +95,8 @@ public class FindReplace extends JFrame {
           allTabs = allTabsBox.isSelected();
         }
       });
-    allTabsBox.setSelected(allTabs);
+	allTabsBox.setSelected("true".equals(Preferences.get("findreplace.all_tabs")));
+	// TN8001さんありがとう＼(^_^)／
     allTabsBox.setEnabled(true);
 
     wrapAroundBox = new JCheckBox(Language.text("find.wrap_around"));
@@ -102,7 +105,8 @@ public class FindReplace extends JFrame {
           wrapAround = wrapAroundBox.isSelected();
         }
       });
-    wrapAroundBox.setSelected(wrapAround);
+	// TN8001さんありがとう＼(^_^)／
+	wrapAroundBox.setSelected(!"false".equals(Preferences.get("findreplace.wrap_around")));
 
     GroupLayout layout = new GroupLayout(pain);
     pain.setLayout(layout);
@@ -263,6 +267,12 @@ public class FindReplace extends JFrame {
     //System.out.println("handling close now");
     findString = findField.getText();
     replaceString = replaceField.getText();
+
+	// TN8001さんありがとう＼(^_^)／
+	Preferences.setBoolean("findreplace.ignorecase", ignoreCaseBox.isSelected());
+	Preferences.setBoolean("findreplace.all_tabs", allTabsBox.isSelected());
+	Preferences.setBoolean("findreplace.wrap_around", wrapAroundBox.isSelected());
+	Preferences.save();
 
     // this object should eventually become dereferenced
     setVisible(false);

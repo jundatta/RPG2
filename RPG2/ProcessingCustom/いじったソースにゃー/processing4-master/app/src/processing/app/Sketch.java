@@ -39,6 +39,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -86,7 +87,7 @@ public class Sketch {
    * will be the same as code.length, because the getCode() method returns
    * just the code[] array, rather than a copy of it, or an array that's been
    * resized to just the relevant files themselves.
-   * http://dev.processing.org/bugs/show_bug.cgi?id=940
+   * https://download.processing.org/bugzilla/940.html
    */
   private int codeCount;
   private SketchCode[] code;
@@ -232,7 +233,7 @@ public class Sketch {
    */
   public void reload() {
     // set current to null so that the tab gets updated
-    // http://dev.processing.org/bugs/show_bug.cgi?id=515
+    // https://download.processing.org/bugzilla/515.html
     current = null;
     // nuke previous files and settings
     load();
@@ -275,7 +276,7 @@ public class Sketch {
     //code[codeCount++] = newCode;
   }
 
-// ソースファイル名の並びをいい感じにするにゃ（PC-8001さんありがとう）
+// ソースファイル名の並びをいい感じにするにゃ（TN8001さんありがとう）
 // https://stackoverflow.com/questions/23205020/java-sort-strings-like-windows-explorer
     public static class WindowsExplorerComparator implements Comparator<String> {
 
@@ -1539,7 +1540,7 @@ public class Sketch {
 
     // If it's a replacement, delete the old file first,
     // otherwise case changes will not be preserved.
-    // http://dev.processing.org/bugs/show_bug.cgi?id=969
+    // https://download.processing.org/bugzilla/969.html
     if (replacement) {
       boolean muchSuccess = destFile.delete();
       if (!muchSuccess) {
