@@ -9,7 +9,9 @@ https://xgf.nu/RAmy
 
 ##### ２．適当なところに展開してください。
 
-##### ３．RPG2\ProcessingCustom\【カスタマイしたProcessing4のIDE】にゃー\build\windows\work\processing.exe
+##### ３．RPG2\ProcessingCustom\【カスタマイしたProcessing4のIDE】にゃー
+
+\build\windows\work\processing.exe
 をダブルクリックして起動してください。
 
 ##### ４．音をならすために「minim」というライブラリをインストールします。
@@ -22,11 +24,21 @@ https://xgf.nu/RAmy
 （４）画面右下の「Install」ボタンを押してください。
 （５）メイン画面に戻ってメニューの「Sketch/Import Library...」で表示されるメニューの一番下に「Minim」が表示されていればOKです。
 
-##### ５．block_kuzushi2\block_kuzushi.pdeをダブルクリックしてください。
+##### ５．「Tiled」で作ったマップを使うために「Ptmx」というライブラリをインストールします。
 
-##### ６．表示された画面左上にある「右向き矢印アイコン」をクリックしてください。
+（１）メニューの「Sketch/Import Library.../Add Library...」を選びます。
+（２）「Libraries」タブの「Filter」のところに"ptmx"と入力してください。
+（３）表示された一覧の
+　　Ptmx | Add Tiled maps ～
+をクリックしてください。
+（４）画面右下の「Install」ボタンを押してください。
+（５）メイン画面に戻ってメニューの「Sketch/Import Library...」で表示されるメニューの一番下に「Ptmx」が表示されていればOKです。
 
-##### ７．「ブロック崩し２（仮）」が動き出せば（20数秒かかりますm(__)m）OKです。
+##### ６．RPG2\RPG2.pdeをダブルクリックしてください。
+
+##### ７．表示された画面左上にある「右向き矢印アイコン」をクリックしてください。
+
+##### ８．「RPG2」が動き出せばOKです。
 
 。。。お疲れさまでした♪
 
