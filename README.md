@@ -16,23 +16,23 @@ https://xgf.nu/RAmy
 
 ##### ４．音をならすために「minim」というライブラリをインストールします。
 
-（１）メニューの「Sketch/Import Library.../Add Library...」を選びます。
-（２）「Libraries」タブの「Filter」のところに"minim"と入力してください。
-（３）表示された一覧の
+（１）メニューの「Sketch/Import Library.../Add Library...」を選びます。  
+（２）「Libraries」タブの「Filter」のところに"minim"と入力してください。  
+（３）表示された一覧の  
 　　Minim | An audio library that provides easy to use classes for playback, recording, analysis, and synthesis of sound.  
-をクリックしてください。
-（４）画面右下の「Install」ボタンを押してください。
-（５）メイン画面に戻ってメニューの「Sketch/Import Library...」で表示されるメニューの一番下に「Minim」が表示されていればOKです。
+をクリックしてください。  
+（４）画面右下の「Install」ボタンを押してください。  
+（５）メイン画面に戻ってメニューの「Sketch/Import Library...」で表示されるメニューの一番下に「Minim」が表示されていればOKです。  
 
 ##### ５．「Tiled」で作ったマップを使うために「Ptmx」というライブラリをインストールします。
 
-（１）メニューの「Sketch/Import Library.../Add Library...」を選びます。
-（２）「Libraries」タブの「Filter」のところに"ptmx"と入力してください。
-（３）表示された一覧の
-　　Ptmx | Add Tiled maps to your sketch.
-をクリックしてください。
-（４）画面右下の「Install」ボタンを押してください。
-（５）メイン画面に戻ってメニューの「Sketch/Import Library...」で表示されるメニューの一番下に「Ptmx」が表示されていればOKです。
+（１）メニューの「Sketch/Import Library.../Add Library...」を選びます。  
+（２）「Libraries」タブの「Filter」のところに"ptmx"と入力してください。  
+（３）表示された一覧の  
+　　Ptmx | Add Tiled maps to your sketch.  
+をクリックしてください。  
+（４）画面右下の「Install」ボタンを押してください。  
+（５）メイン画面に戻ってメニューの「Sketch/Import Library...」で表示されるメニューの一番下に「Ptmx」が表示されていればOKです。  
 
 ##### ６．RPG2\RPG2.pdeをダブルクリックしてください。
 
