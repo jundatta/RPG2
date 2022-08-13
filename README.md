@@ -1,17 +1,15 @@
-# 【遊び方】2022/06/11
+# 【遊び方】2022/08/13
 
 https://www.nicovideo.jp/watch/sm40163068
 https://www.youtube.com/watch?v=RBkOlsDzWCo
 
-##### １．最近の「Processingで遊ぶにゃ♪」の配信を開きます。
+##### １．配信でいじってるRPG2のダウンロード先です。
 
-  "Processing"とかで検索するとでます。
-　・配信でいじってるブロック崩し２（仮）のダウンロード先です。
-に書いてあるURLを開いて「block_kuzushi2.zip」をダウンロードしてください。
+https://xgf.nu/RAmy
 
 ##### ２．適当なところに展開してください。
 
-##### ３．block_kuzushi2\ProcessingCustom\【カスタマイしたProcessing4のIDE】にゃー\build\windows\work\processing.exe
+##### ３．RPG2\ProcessingCustom\【カスタマイしたProcessing4のIDE】にゃー\build\windows\work\processing.exe
 をダブルクリックして起動してください。
 
 ##### ４．音をならすために「minim」というライブラリをインストールします。
