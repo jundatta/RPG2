@@ -81,32 +81,35 @@ public class FindReplace extends JFrame {
     if (replaceString != null) replaceField.setText(replaceString);
 
     ignoreCaseBox = new JCheckBox(Language.text("find.ignore_case"));
+	// TN8001さんありがとう＼(^_^)／
+	ignoreCase = !"false".equals(Preferences.get("findreplace.ignorecase"));
     ignoreCaseBox.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
           ignoreCase = ignoreCaseBox.isSelected();
         }
       });
-	// TN8001さんありがとう＼(^_^)／
-	ignoreCaseBox.setSelected(!"false".equals(Preferences.get("findreplace.ignorecase")));
+    ignoreCaseBox.setSelected(ignoreCase);
 
     allTabsBox = new JCheckBox(Language.text("find.all_tabs"));
+	// TN8001さんありがとう＼(^_^)／
+	allTabs = "true".equals(Preferences.get("findreplace.all_tabs"));
     allTabsBox.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
           allTabs = allTabsBox.isSelected();
         }
       });
-	allTabsBox.setSelected("true".equals(Preferences.get("findreplace.all_tabs")));
-	// TN8001さんありがとう＼(^_^)／
+    allTabsBox.setSelected(allTabs);
     allTabsBox.setEnabled(true);
 
     wrapAroundBox = new JCheckBox(Language.text("find.wrap_around"));
+	// TN8001さんありがとう＼(^_^)／
+	wrapAround = !"false".equals(Preferences.get("findreplace.wrap_around"));
     wrapAroundBox.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
           wrapAround = wrapAroundBox.isSelected();
         }
       });
-	// TN8001さんありがとう＼(^_^)／
-	wrapAroundBox.setSelected(!"false".equals(Preferences.get("findreplace.wrap_around")));
+    wrapAroundBox.setSelected(wrapAround);
 
     GroupLayout layout = new GroupLayout(pain);
     pain.setLayout(layout);
