@@ -5,7 +5,7 @@ https://www.youtube.com/watch?v=RBkOlsDzWCo
 
 ##### １．配信でいじってるRPG2のダウンロード先です。
 
-https://xgf.nu/RAmy
+https://xgf.nu/5pbc
 
 ##### ２．適当なところに展開してください。
 
