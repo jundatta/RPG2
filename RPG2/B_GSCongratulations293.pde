@@ -26,8 +26,8 @@ class GameSceneCongratulations293 extends GameSceneCongratulationsBase {
   }
   @Override void draw() {
     push();
-    float offset = map(48, 0, OrgW, 0, width);
-    translate(-offset, height * 0.45f);
+    float offset = map(48, 0, OrgW, 0, width) - 48;
+    translate(offset, height * 0.45f);
     t++;
     background(0);
     stroke(255);
