@@ -12,6 +12,7 @@ class GameSceneCongratulationsTemplate extends GameSceneCongratulationsBase {
   @Override void draw() {
     push();
     pop();
+    
     logoRightLower(#ff0000);
   }
   @Override void mousePressed() {
