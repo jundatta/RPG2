@@ -1,4 +1,4 @@
-# 【遊び方】2022/08/13
+# 【遊び方】2022/09/21
 
 https://www.youtube.com/watch?v=RBkOlsDzWCo
 
