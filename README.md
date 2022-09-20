@@ -4,7 +4,7 @@ https://www.youtube.com/watch?v=RBkOlsDzWCo
 
 ##### １．配信でいじってるRPG2のダウンロード先です。
 
-https://xgf.nu/5pbc
+https://xgf.nu/um0P
 
 ##### ２．適当なところに展開してください。
 
