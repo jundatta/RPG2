@@ -1,10 +1,10 @@
-# 【遊び方】2022/09/23
+# 【遊び方】2022/10/29
 
 https://www.youtube.com/watch?v=RBkOlsDzWCo
 
 ##### １．配信でいじってるRPG2のダウンロード先です。
 
-https://xgf.nu/p02S
+https://xgf.nu/S0nV
 
 ##### ２．適当なところに展開してください。
 
