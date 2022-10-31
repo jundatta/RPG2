@@ -5,6 +5,7 @@ https://www.youtube.com/watch?v=RBkOlsDzWCo
 ##### １．配信でいじってるRPG2のダウンロード先です。
 
 https://xgf.nu/jisy
+⇒inigo quilezさんの作品（240）は移植ダメそうなので抹消しましたm(__)m
 
 ##### ２．適当なところに展開してください。
 
